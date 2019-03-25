@@ -1,13 +1,35 @@
 #tooltip {
   position: absolute;
-  background-color: #8ea78e;
+  background-color: #5d8496;
   height: 100px;
   width: 200px;
   visibility: hidden;
   font-size: small;
+  text-align: initial;
+  padding: 5px;
 }
 
+svg {
+  background-color: #fff;
+  color: black;
+}
+
+
 body {
-  font-family: 'Arimo', sans-serif;
+  color: #fff;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: 'Arimo';
+  background-image: url(https://images.unsplash.com/photo-1422118956051-420a81c79553?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-blend-mode: darken; 
+}
+
+#legend-square-1 {
+  fill: #0ea1db;
+}
+
+#legend-square-2 {
+  fill: #023d55;
 }

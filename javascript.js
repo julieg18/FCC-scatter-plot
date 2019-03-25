@@ -3,8 +3,8 @@ let xMargin = 50;
 let yMargin = 50;
 let chartWidth = 700;
 let chartHeight = 400;
-let width = chartWidth + xMargin * 2;
-let height = chartHeight + yMargin * 2;
+let width = chartWidth + xMargin;
+let height = chartHeight + yMargin;
 
 //svg
 const svg = d3.select("svg")
@@ -92,6 +92,10 @@ req.onload = function() {
     .attr("data-yvalue", (d) => d["timeObj"])
     .attr("cx", (d) => xScale(d["Year"]))
     .attr("cy", (d) => yScale(d["timeObj"]))
+    .attr("fill", (d) => {
+      let color = (d["Doping"] === '') ? "#0ea1db" : "#023d55";
+      return color;
+    })
     //tooltip
     .on("mouseover", (d, i) => {
       d3.select("div")
@@ -107,7 +111,12 @@ req.onload = function() {
     });
   };
 
-  function addTextToTooltip(data) {
-    d3.select("div")
-      .html(`Name: ${data["Name"]} </br> Year: ${data["Year"]} </br> Time: ${data["Time"]} </br> Nationality: ${data["Nationality"]} </br> ${data["Doping"]}`);
-  }
+function addTextToTooltip(data) {
+  d3.select("div")
+    .html(`Name: ${data["Name"]} </br> Year: ${data["Year"]} </br> Time: ${data["Time"]} </br> Nationality: ${data["Nationality"]} </br> ${checkDopingAllegations(data["Doping"])}`);
+}
+
+function checkDopingAllegations(string) {
+  let newString = (string === '') ? "No doping allegations" : string;
+  return newString;
+}
