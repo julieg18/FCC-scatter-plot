@@ -1,0 +1,13 @@
+#tooltip {
+  position: absolute;
+  background-color: #8ea78e;
+  height: 100px;
+  width: 200px;
+  visibility: hidden;
+  font-size: small;
+}
+
+body {
+  font-family: 'Arimo', sans-serif;
+  text-align: center;
+}
